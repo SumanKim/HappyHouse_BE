@@ -35,6 +35,7 @@ public class HouseMapController {
 
 	@Autowired
 	private HouseMapService haHouseMapService;
+	@Autowired
 	private LikeAptService likeAptService;
 	
 	@GetMapping("/sido")
