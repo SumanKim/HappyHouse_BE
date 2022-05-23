@@ -24,4 +24,14 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.userInfo(userid);
 	}
 
+	@Override
+	public boolean deleteMember(String userid) {
+		return memberMapper.deleteInfo(userid);
+	}
+
+	@Override
+	public boolean updateMember(MemberDto member) {
+		return memberMapper.updateInfo(member);
+	}
+
 }
