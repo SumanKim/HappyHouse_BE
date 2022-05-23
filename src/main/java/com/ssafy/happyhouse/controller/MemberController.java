@@ -132,7 +132,7 @@ public class MemberController {
 	}
 
 	@ApiOperation(value = "아이디 존재 확인", notes = "아이디의 존재 여부를 확인한다. ID가 존재하면 1 존재하지 않으면 0을 반환한다.", response = Integer.class)
-	@PutMapping("/{userid}")
+	@GetMapping("/{userid}")
 	public ResponseEntity<Integer> checkId(@PathVariable("userid") @ApiParam(value = "조회할 아이디.", required = true) String userid) {
 		logger.debug("checkId - 호출");
 		
