@@ -1,6 +1,7 @@
 package com.ssafy.happyhouse.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -141,5 +142,13 @@ public class MemberController {
 			return new ResponseEntity<Integer>(result, HttpStatus.OK);
 		}
 		return new ResponseEntity<Integer>(-1, HttpStatus.NO_CONTENT);
+	}
+	
+	@ApiOperation(value = "회원정보 모두 조회", notes = "회원 정보를 모두 조회한다. 그리고 DB삭제 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
+	@GetMapping("/info")
+	public ResponseEntity<List<MemberDto>> getAllUser() {
+		logger.debug("getAllUser - 호출");
+		List<MemberDto> members = memberService.getAllMember();
+		return new ResponseEntity<List<MemberDto>>(members, HttpStatus.OK);
 	}
 }

@@ -1,5 +1,7 @@
 package com.ssafy.happyhouse.service;
 
+import java.util.List;
+
 import com.ssafy.happyhouse.dto.MemberDto;
 
 public interface MemberService {
@@ -10,5 +12,6 @@ public interface MemberService {
 	public boolean updateMember(MemberDto member);
 	public int checkId(String userid);
 	public boolean createMember(MemberDto member);
+	public List<MemberDto> getAllMember();
 	
 }

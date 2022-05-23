@@ -39,4 +39,9 @@
 		values(#{userid},#{username},#{userpwd},#{email},now())
 	</insert>
 	
+	<select id="selectAllInfo" resultType="memberDto">
+		select *
+		from ssafy_member
+	</select>
+	
 </mapper>
