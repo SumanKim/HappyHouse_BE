@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.mapper.LikeAptMapper">
+
+	<select id="selectLikeAptList" resultType="LikeAptDto">
+		select *
+		from likeapt
+		where userid = #{userid}
+	</select>
+	
+	<insert id="insertLikeApt" parameterType="LikeAptDto">
+		insert into likeapt(userid, address)
+		values(#{userid}, #{address})
+	</insert>
+	
+	<delete id="deleteLikeApt" parameterType="Integer">
+		delete 
+		from likeapt
+		where aptno = #{aptno}
+	</delete>
+</mapper>
