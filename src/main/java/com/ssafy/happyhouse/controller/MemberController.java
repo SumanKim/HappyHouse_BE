@@ -110,6 +110,16 @@ public class MemberController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
+	@ApiOperation(value = "회원정보 등록", notes = "회원 정보를 등록한다. 그리고 DB삭제 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
+	@PostMapping("/info")
+	public ResponseEntity<String> createUser(@RequestBody MemberDto member) {
+		logger.debug("createUser - 호출");
+		if (memberService.createMember(member)) {
+			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		}
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+	}
+	
 	@ApiOperation(value = "회원정보 수정", notes = "회원 정보를 수정한다. 그리고 DB수정 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
 	@PutMapping("/info")
 	public ResponseEntity<String> updateUser(@RequestBody MemberDto member) {
@@ -121,4 +131,15 @@ public class MemberController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 
+	@ApiOperation(value = "아이디 존재 확인", notes = "아이디의 존재 여부를 확인한다. ID가 존재하면 1 존재하지 않으면 0을 반환한다.", response = Integer.class)
+	@PutMapping("/{userid}")
+	public ResponseEntity<Integer> checkId(@PathVariable("userid") @ApiParam(value = "조회할 아이디.", required = true) String userid) {
+		logger.debug("checkId - 호출");
+		
+		int result = memberService.checkId(userid);
+		if (result >= 0) {
+			return new ResponseEntity<Integer>(result, HttpStatus.OK);
+		}
+		return new ResponseEntity<Integer>(-1, HttpStatus.NO_CONTENT);
+	}
 }

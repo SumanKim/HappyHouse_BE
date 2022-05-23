@@ -28,4 +28,15 @@
 		where userid = #{userid}
 	</update>
 	
+	<select id="checkId" parameterType="String" resultType="Integer">
+		select count(userid)
+		from ssafy_member
+		where userid = #{userid}
+	</select>
+	
+	<insert id="insertInfo" parameterType="memberDto">
+		insert into ssafy_member
+		values(#{userid},#{username},#{userpwd},#{email},now())
+	</insert>
+	
 </mapper>

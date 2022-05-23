@@ -8,5 +8,7 @@ public interface MemberService {
 	public MemberDto userInfo(String userid) throws Exception;
 	public boolean deleteMember(String userid);
 	public boolean updateMember(MemberDto member);
+	public int checkId(String userid);
+	public boolean createMember(MemberDto member);
 	
 }

@@ -34,4 +34,14 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.updateInfo(member);
 	}
 
+	@Override
+	public int checkId(String userid) {
+		return memberMapper.checkId(userid);
+	}
+
+	@Override
+	public boolean createMember(MemberDto member) {
+		return memberMapper.insertInfo(member);
+	}
+
 }
