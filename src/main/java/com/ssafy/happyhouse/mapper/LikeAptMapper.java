@@ -8,7 +8,7 @@ import com.ssafy.happyhouse.dto.Board;
 import com.ssafy.happyhouse.dto.LikeAptDto;
 @Mapper
 public interface LikeAptMapper {
-	public List<LikeAptDto> selectLikeAptList(int userid);
+	public List<LikeAptDto> selectLikeAptList(String userid);
 	public boolean insertLikeApt(LikeAptDto apt);
 	public boolean deleteLikeApt(int aptno);
 }

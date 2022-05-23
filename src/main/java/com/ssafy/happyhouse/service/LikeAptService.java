@@ -6,7 +6,7 @@ import com.ssafy.happyhouse.dto.Board;
 import com.ssafy.happyhouse.dto.LikeAptDto;
 
 public interface LikeAptService {
-	public List<LikeAptDto> getLikeAptList(int userid);
+	public List<LikeAptDto> getLikeAptList(String userid);
 	public boolean addLikeApt(LikeAptDto apt);
 	public boolean deleteLikeApt(int aptno);
 }

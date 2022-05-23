@@ -67,7 +67,7 @@ public class HouseMapController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
-	@DeleteMapping("/likeapt/${aptno}")
+	@DeleteMapping("/likeapt/{aptno}")
 	public ResponseEntity<String> deletelikeapt(@PathVariable int aptno) throws Exception {
 		if (likeAptService.deleteLikeApt(aptno)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
@@ -75,8 +75,8 @@ public class HouseMapController {
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/likeapt/${userid}")
-	public ResponseEntity<List<LikeAptDto>> getlikeaptlist(@PathVariable int userid) throws Exception {
+	@GetMapping("/likeapt/{userid}")
+	public ResponseEntity<List<LikeAptDto>> getlikeaptlist(@PathVariable String userid) throws Exception {
 		return new ResponseEntity<List<LikeAptDto>>(likeAptService.getLikeAptList(userid), HttpStatus.OK);
 	}
 }

@@ -18,7 +18,7 @@ public class LikeAptServiceImpl implements LikeAptService {
 	private LikeAptMapper likeAptMapper;
 
 	@Override
-	public List<LikeAptDto> getLikeAptList(int userid) {
+	public List<LikeAptDto> getLikeAptList(String userid) {
 		return likeAptMapper.selectLikeAptList(userid);
 	}
 
