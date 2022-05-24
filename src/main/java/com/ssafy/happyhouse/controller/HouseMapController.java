@@ -80,4 +80,9 @@ public class HouseMapController {
 	public ResponseEntity<List<LikeAptDto>> getlikeaptlist(@PathVariable String userid) throws Exception {
 		return new ResponseEntity<List<LikeAptDto>>(likeAptService.getLikeAptList(userid), HttpStatus.OK);
 	}
+	
+	@GetMapping("/likeapt")
+	public ResponseEntity<List<LikeAptDto>> getalllikeaptlist() throws Exception {
+		return new ResponseEntity<List<LikeAptDto>>(likeAptService.getAllLikeAptList(), HttpStatus.OK);
+	}
 }

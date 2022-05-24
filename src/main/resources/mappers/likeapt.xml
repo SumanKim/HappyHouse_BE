@@ -10,6 +10,11 @@
 		where userid = #{userid}
 	</select>
 	
+	<select id="selectAllLikeAptList" resultType="LikeAptDto">
+		select *
+		from likeapt
+	</select>
+	
 	<insert id="insertLikeApt" parameterType="LikeAptDto">
 		insert into likeapt(serialno, userid, address, floor, price, area)
 		values(#{serialno}, #{userid}, #{address}, #{floor}, #{price}, #{area})

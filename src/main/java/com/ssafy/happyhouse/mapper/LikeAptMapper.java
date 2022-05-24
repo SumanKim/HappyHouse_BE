@@ -11,4 +11,5 @@ public interface LikeAptMapper {
 	public List<LikeAptDto> selectLikeAptList(String userid);
 	public boolean insertLikeApt(LikeAptDto apt);
 	public boolean deleteLikeApt(String serialno);
+	public List<LikeAptDto> selectAllLikeAptList();
 }

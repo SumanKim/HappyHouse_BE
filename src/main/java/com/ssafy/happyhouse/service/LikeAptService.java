@@ -9,4 +9,5 @@ public interface LikeAptService {
 	public List<LikeAptDto> getLikeAptList(String userid);
 	public boolean addLikeApt(LikeAptDto apt);
 	public boolean deleteLikeApt(String serialno);
+	public List<LikeAptDto> getAllLikeAptList();
 }
