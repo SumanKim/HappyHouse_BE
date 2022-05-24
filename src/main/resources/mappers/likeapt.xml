@@ -11,13 +11,13 @@
 	</select>
 	
 	<insert id="insertLikeApt" parameterType="LikeAptDto">
-		insert into likeapt(userid, address)
-		values(#{userid}, #{address})
+		insert into likeapt(serialno, userid, address, floor, price, area)
+		values(#{serialno}, #{userid}, #{address}, #{floor}, #{price}, #{area})
 	</insert>
 	
 	<delete id="deleteLikeApt" parameterType="Integer">
 		delete 
 		from likeapt
-		where aptno = #{aptno}
+		where serialno = #{serialno}
 	</delete>
 </mapper>
