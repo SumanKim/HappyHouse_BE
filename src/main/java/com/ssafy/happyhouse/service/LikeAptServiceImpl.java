@@ -28,7 +28,7 @@ public class LikeAptServiceImpl implements LikeAptService {
 	}
 
 	@Override
-	public boolean deleteLikeApt(int serialno) {
+	public boolean deleteLikeApt(String serialno) {
 		return likeAptMapper.deleteLikeApt(serialno);
 	}
 }

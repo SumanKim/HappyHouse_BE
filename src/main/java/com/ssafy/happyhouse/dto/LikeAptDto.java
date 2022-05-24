@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "LikeApt(관심매물정보)", description = "아파트번호, 유저아이디, 매물주소, 작성일을 가진  Class")
 public class LikeAptDto {
 	@ApiModelProperty(value = "아파트번호")
-	private int serialno;
+	private String serialno;
 	@ApiModelProperty(value = "유저아이디")
 	private String userid;
 	@ApiModelProperty(value = "매물주소")
@@ -19,10 +19,10 @@ public class LikeAptDto {
 	private String area;
 	@ApiModelProperty(value = "작성일")
 	private String regtime;
-	public int getSerialno() {
+	public String getSerialno() {
 		return serialno;
 	}
-	public void setSerialno(int serialno) {
+	public void setSerialno(String serialno) {
 		this.serialno = serialno;
 	}
 	public String getUserid() {
@@ -66,7 +66,7 @@ public class LikeAptDto {
 		
 	}
 	
-	public LikeAptDto(int serialno, String userid, String address, String floor, String price, String area,
+	public LikeAptDto(String serialno, String userid, String address, String floor, String price, String area,
 			String regtime) {
 		super();
 		this.serialno = serialno;

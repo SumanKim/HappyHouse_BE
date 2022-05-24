@@ -10,5 +10,5 @@ import com.ssafy.happyhouse.dto.LikeAptDto;
 public interface LikeAptMapper {
 	public List<LikeAptDto> selectLikeAptList(String userid);
 	public boolean insertLikeApt(LikeAptDto apt);
-	public boolean deleteLikeApt(int serialno);
+	public boolean deleteLikeApt(String serialno);
 }

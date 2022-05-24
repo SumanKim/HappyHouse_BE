@@ -69,7 +69,7 @@ public class HouseMapController {
 	}
 	
 	@DeleteMapping("/likeapt/{serialno}")
-	public ResponseEntity<String> deletelikeapt(@PathVariable int serialno) throws Exception {
+	public ResponseEntity<String> deletelikeapt(@PathVariable String serialno) throws Exception {
 		if (likeAptService.deleteLikeApt(serialno)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		}
