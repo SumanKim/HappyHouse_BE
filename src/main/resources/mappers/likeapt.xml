@@ -15,7 +15,7 @@
 		values(#{serialno}, #{userid}, #{address}, #{floor}, #{price}, #{area})
 	</insert>
 	
-	<delete id="deleteLikeApt" parameterType="Integer">
+	<delete id="deleteLikeApt" parameterType="String">
 		delete 
 		from likeapt
 		where serialno = #{serialno}
