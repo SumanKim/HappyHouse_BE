@@ -4,11 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.ssafy.happyhouse.dto.Board;
+import com.ssafy.happyhouse.dto.AllLikeAptResultDto;
 import com.ssafy.happyhouse.dto.LikeAptDto;
-import com.ssafy.happyhouse.mapper.BoardMapper;
 import com.ssafy.happyhouse.mapper.LikeAptMapper;
 
 @Service
@@ -33,7 +31,7 @@ public class LikeAptServiceImpl implements LikeAptService {
 	}
 
 	@Override
-	public List<LikeAptDto> getAllLikeAptList() {
+	public List<AllLikeAptResultDto> getAllLikeAptList() {
 		return likeAptMapper.selectAllLikeAptList();
 	}
 }

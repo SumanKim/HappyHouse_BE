@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ssafy.happyhouse.dto.AllLikeAptResultDto;
 import com.ssafy.happyhouse.dto.Board;
 import com.ssafy.happyhouse.dto.HouseInfoDto;
 import com.ssafy.happyhouse.dto.LikeAptDto;
@@ -82,7 +83,7 @@ public class HouseMapController {
 	}
 	
 	@GetMapping("/likeapt")
-	public ResponseEntity<List<LikeAptDto>> getalllikeaptlist() throws Exception {
-		return new ResponseEntity<List<LikeAptDto>>(likeAptService.getAllLikeAptList(), HttpStatus.OK);
+	public ResponseEntity<List<AllLikeAptResultDto>> getalllikeaptlist() throws Exception {
+		return new ResponseEntity<List<AllLikeAptResultDto>>(likeAptService.getAllLikeAptList(), HttpStatus.OK);
 	}
 }

@@ -10,9 +10,10 @@
 		where userid = #{userid}
 	</select>
 	
-	<select id="selectAllLikeAptList" resultType="LikeAptDto">
-		select *
+	<select id="selectAllLikeAptList" resultType="AllLikeAptResultDto">
+		select serialno, address, floor, price, area, count(serialno) as 'likecnt'
 		from likeapt
+		group by serialno
 	</select>
 	
 	<insert id="insertLikeApt" parameterType="LikeAptDto">
