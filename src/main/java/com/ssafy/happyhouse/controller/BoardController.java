@@ -68,11 +68,22 @@ public class BoardController {
 	}
 
     @ApiOperation(value = "게시판 글정보 수정", notes = "글번호에 해당하는 게시글의 정보를 수정한다. 그리고 DB수정 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
-	@PutMapping("{articleno}")
+	@PutMapping
 	public ResponseEntity<String> updateBoard(@RequestBody Board board) {
 		logger.debug("updateBoard - 호출");
 		
 		if (boardService.updateBoard(board)) {
+			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		}
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+	}
+    
+    @ApiOperation(value = "게시판 조회수 증가", notes = "글번호에 해당하는 게시글의 조회수를 1만큼 높인다. 그리고 DB수정 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
+	@PutMapping("{articleno}")
+	public ResponseEntity<String> updateBoardHit(@PathVariable int articleno) {
+		logger.debug("updateBoardHit - 호출");
+		
+		if (boardService.updateHit(articleno)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		}
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);

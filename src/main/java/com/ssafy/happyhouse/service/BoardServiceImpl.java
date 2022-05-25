@@ -36,8 +36,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public void updateHit(int articleno) {
-		boardMapper.updateHit(articleno);
+	public boolean updateHit(int articleno) {
+		return boardMapper.updateHit(articleno) == 1;
 	}
 
 	@Override

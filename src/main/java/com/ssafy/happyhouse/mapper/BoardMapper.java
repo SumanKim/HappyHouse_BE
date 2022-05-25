@@ -10,7 +10,7 @@ public interface BoardMapper {
 	public List<Board> selectBoard();
 	public List<Board> getBoardList(String text);
 	public Board selectBoardByNo(int articleno);
-	public void updateHit(int articleno);
+	public int updateHit(int articleno);
 	public int insertBoard(Board board);
 	public int updateBoard(Board board);
 	public int deleteBoard(int articleno);
