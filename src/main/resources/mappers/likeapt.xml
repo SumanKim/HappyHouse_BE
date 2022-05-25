@@ -14,6 +14,8 @@
 		select serialno, address, floor, price, area, count(serialno) as 'likecnt'
 		from likeapt
 		group by serialno
+		order by likecnt desc
+		limit 10
 	</select>
 	
 	<insert id="insertLikeApt" parameterType="LikeAptDto">
