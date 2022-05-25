@@ -15,7 +15,6 @@
 		from likeapt
 		group by serialno
 		order by likecnt desc
-		limit 10
 	</select>
 	
 	<insert id="insertLikeApt" parameterType="LikeAptDto">
