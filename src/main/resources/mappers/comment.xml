@@ -9,7 +9,7 @@
 		select commentno, userid, content, regtime
 		from comment
 		where articleno = #{articleno}
-		order by commentno desc
+		order by commentno
 	</select>
 
 	<!-- 댓글 등록 -->
