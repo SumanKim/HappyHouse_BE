@@ -6,6 +6,7 @@ create table likeapt
     floor varchar(10),
 	price varchar(20),
     area varchar(20),
+    year int,
     regtime timestamp DEFAULT CURRENT_TIMESTAMP,
     primary key (serialno, userid),
     foreign key (userid) references ssafy_member(userid)
