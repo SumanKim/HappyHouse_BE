@@ -11,15 +11,15 @@
 	</select>
 	
 	<select id="selectAllLikeAptList" resultType="AllLikeAptResultDto">
-		select serialno, address, floor, price, area, year, count(serialno) as 'likecnt'
+		select serialno, address, floor, price, area, builtyear, count(serialno) as 'likecnt'
 		from likeapt
 		group by serialno
 		order by likecnt desc
 	</select>
 	
 	<insert id="insertLikeApt" parameterType="LikeAptDto">
-		insert into likeapt(serialno, userid, address, floor, price, area, year)
-		values(#{serialno}, #{userid}, #{address}, #{floor}, #{price}, #{area}, #{year})
+		insert into likeapt(serialno, userid, address, floor, price, area, builtyear)
+		values(#{serialno}, #{userid}, #{address}, #{floor}, #{price}, #{area}, #{builtyear})
 	</insert>
 	
 	<delete id="deleteLikeApt" parameterType="String">

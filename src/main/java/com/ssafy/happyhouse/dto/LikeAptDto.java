@@ -20,7 +20,7 @@ public class LikeAptDto {
 	@ApiModelProperty(value = "작성일")
 	private String regtime;
 	@ApiModelProperty(value = "건축년도")
-	private Integer year;
+	private String builtyear;
 	
 	public String getSerialno() {
 		return serialno;
@@ -65,17 +65,18 @@ public class LikeAptDto {
 		this.regtime = regtime;
 	}
 	
+	
+	public String getBuiltyear() {
+		return builtyear;
+	}
+	public void setBuiltyear(String builtyear) {
+		this.builtyear = builtyear;
+	}
 	public LikeAptDto() {
 		
 	}
-	public Integer getYear() {
-		return year;
-	}
-	public void setYear(Integer year) {
-		this.year = year;
-	}
 	public LikeAptDto(String serialno, String userid, String address, String floor, String price, String area,
-			String regtime, Integer year) {
+			String regtime, String builtyear) {
 		super();
 		this.serialno = serialno;
 		this.userid = userid;
@@ -84,6 +85,9 @@ public class LikeAptDto {
 		this.price = price;
 		this.area = area;
 		this.regtime = regtime;
-		this.year = year;
+		this.builtyear = builtyear;
 	}
+	
+	
+
 }
