@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.mapper.LikeAptMapper">
+
+	<select id="selectLikeAptList" resultType="LikeAptDto">
+		select *
+		from likeapt
+		where userid = #{userid}
+	</select>
+	
+	<select id="selectAllLikeAptList" resultType="AllLikeAptResultDto">
+		select serialno, address, floor, price, area, builtyear, count(serialno) as 'likecnt'
+		from likeapt
+		group by serialno
+		order by likecnt desc
+	</select>
+	
+	<insert id="insertLikeApt" parameterType="LikeAptDto">
+		insert into likeapt(serialno, userid, address, floor, price, area, builtyear)
+		values(#{serialno}, #{userid}, #{address}, #{floor}, #{price}, #{area}, #{builtyear})
+	</insert>
+	
+	<delete id="deleteLikeApt" parameterType="String">
+		delete 
+		from likeapt
+		where serialno = #{serialno}
+	</delete>
+</mapper>
